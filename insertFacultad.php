@@ -8,7 +8,7 @@ function insert_facultad(
   string $ubicacion,
 ) {
   $query =
-    "INSERT INTO facultad (nombre_facultad, descripcion_facultad, ubicacion_facultad) VALUES(?, ?, ?);";
+    "INSERT INTO facultad (nombre, descripcion, ubicacion) VALUES(?, ?, ?);";
 
   $result = $mysql->execute_query($query, [$nombre, $descripcion, $ubicacion]);
 

@@ -5,7 +5,7 @@ include_once "conexion.php";
  * Realiza una búsqueda de las carreras por código de registro
  */
 function get_carrera_by_code(mysqli $mysql, string $code): string {
-  $result = $mysql->execute_query("SELECT * FROM carrera WHERE idcarrera = ?", [
+  $result = $mysql->execute_query("SELECT * FROM carrera WHERE codigo = ?", [
     $code,
   ]);
 
@@ -22,7 +22,7 @@ function get_carrera_by_code(mysqli $mysql, string $code): string {
  */
 function get_carrera_by_facultad(mysqli $mysql, string $nombre): string {
   $result = $mysql->execute_query(
-    "SELECT * FROM facultad WHERE nombre_facultad = ?",
+    "SELECT * FROM facultad WHERE nombre = ?",
     [$nombre],
   );
 
@@ -30,7 +30,7 @@ function get_carrera_by_facultad(mysqli $mysql, string $nombre): string {
   if (!$facultad) {
     return "";
   }
-  $id = $facultad["idfacultad"];
+  $id = $facultad["codigo"];
 
   $result = $mysql->execute_query(
     "SELECT * FROM carrera WHERE id_facultad = ?",

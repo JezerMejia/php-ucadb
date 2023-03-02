@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $json = "{\"data\": [";
     while ($facultad = $query->fetch_assoc()) {
       $carreras_query = $mysql->query(
-        "SELECT * FROM carrera WHERE id_facultad = " . $facultad["idfacultad"],
+        "SELECT * FROM carrera WHERE id_facultad = " . $facultad["codigo"],
       );
 
       $carreras_arr = [];

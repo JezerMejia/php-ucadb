@@ -8,7 +8,7 @@ function insert_carrera(
   string $id_facultad,
 ) {
   $query =
-    "INSERT INTO carrera (nombre_carrera, descripcion_carrera, id_facultad) VALUES(?, ?, ?);";
+    "INSERT INTO carrera (nombre, descripcion, id_facultad) VALUES(?, ?, ?);";
 
   $result = $mysql->execute_query($query, [
     $nombre,
